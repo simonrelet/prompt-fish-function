@@ -15,10 +15,10 @@ function basic_git_prompt --description 'Basic git prompt'
   set_color normal
 
   set_color $git_prompt_color_branch
-  printf "%s" $branch
+  printf '%s' $branch
   set_color normal
 
   set_color $git_prompt_color_commit
-  printf ":%s" (git rev-parse --short HEAD)
+  printf ':%s' (git rev-parse --short HEAD)
   set_color normal
 end
