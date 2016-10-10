@@ -32,3 +32,9 @@ function fish_prompt --description 'Write out the prompt'
   printf '➤ '
   set_color normal
 end
+
+function fish_right_prompt --description 'Write out the right prompt'
+	set_color $fish_color_cwd
+	printf '%s\n' (date '+%Y-%m-%d %H:%M:%S')
+	set_color normal
+end
