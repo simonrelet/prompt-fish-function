@@ -11,7 +11,7 @@ function basic_git_prompt --description 'Basic git prompt'
   end
 
   set_color $git_prompt_color_separator
-  printf ' | '
+  printf ' on '
   set_color normal
 
   set_color $git_prompt_color_branch
