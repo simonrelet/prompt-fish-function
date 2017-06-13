@@ -5,7 +5,7 @@ function basic_git_prompt --description 'Basic git prompt'
     return 1
   end
 
-  set -l branch (git rev-parse --abbrev-ref HEAD ^/dev/null)
+  set -l branch (git rev-parse --abbrev-ref HEAD 2> /dev/null)
   if test -z $branch
     return
   end
@@ -18,7 +18,12 @@ function basic_git_prompt --description 'Basic git prompt'
   printf '%s' $branch
   set_color normal
 
+  set -l commit_hash (git rev-parse --short HEAD 2> /dev/null)
+  if test -z $commit_hash
+    return
+  end
+
   set_color $git_prompt_color_commit
-  printf ':%s' (git rev-parse --short HEAD)
+  printf ':%s' "$commit_hash"
   set_color normal
 end
