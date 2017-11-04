@@ -33,6 +33,6 @@ function fish_prompt --description 'Write out the prompt'
     set_color $prompt_color_arrow
   end
 
-  printf '➤ '
+  printf '$ '
   set_color normal
 end
